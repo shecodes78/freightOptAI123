@@ -34,9 +34,9 @@ function App() {
         quantity,
       });
 
-      const response = await fetch(
-        `http://localhost:5000/api/analyze?${params.toString()}`
-      );
+    const response = await fetch(
+  `https://freightoptai123.onrender.com/api/analyze?${params.toString()}`
+);
 
       if (!response.ok) {
         throw new Error("Failed to analyze shipment");
