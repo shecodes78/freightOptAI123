@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const WEATHER_API_URL =
   "https://api.weatherapi.com/v1/current.json";
@@ -788,10 +788,10 @@ app.get("/api/analyze", async (req, res) => {
 // START SERVER
 // ======================================================
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log("");
   console.log(
-    `FreightOpt AI Backend running on http://localhost:${PORT}`
+    `FreightOpt AI Backend running on port ${PORT}`
   );
   console.log("----------------------------------------");
 });
